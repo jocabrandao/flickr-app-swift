@@ -36,10 +36,7 @@ Além disso, tem também:
  - Stack View
 
 ## Screenshots
-![alt tag](Screenshots/screen1.png "Ícone do APP")
-![alt tag](Screenshots/screen2.png "Tela de loading")
-![alt tag](Screenshots/screen3.png "Lista de imagens obtidas da API REST do flickr")
-![alt tag](Screenshots/screen4.png "Imagem selecionada, apresentada em tamanho maior")
+Veja na pasta: Screenshots.
 
 ## Construído utilizando
 
