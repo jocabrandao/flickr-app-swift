@@ -36,10 +36,10 @@ Além disso, tem também:
  - Stack View
 
 ## Screenshots
-![alt tag](screenshots/screen-0.png "Ícone do APP")
-![alt tag](screenshots/screen-1.png "Tela de loading")
-![alt tag](screenshots/screen-2.png "Lista de imagens obtidas da API REST do flickr")
-![alt tag](screenshots/screen-3.png "Imagem selecionada, apresentada em tamanho maior")
+![alt tag](screenshots/screen1.png "Ícone do APP")
+![alt tag](screenshots/screen2.png "Tela de loading")
+![alt tag](screenshots/screen3.png "Lista de imagens obtidas da API REST do flickr")
+![alt tag](screenshots/screen4.png "Imagem selecionada, apresentada em tamanho maior")
 
 ## Construído utilizando
 

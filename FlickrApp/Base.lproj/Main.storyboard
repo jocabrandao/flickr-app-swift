@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NPP-Qq-kkN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flickr ImagesVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FlickrImagesVC" customModule="FlickrApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QFc-o5-nx6"/>
+                        <viewControllerLayoutGuide type="bottom" id="P90-f7-VYw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p6x-HW-6S7">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Mcc-OW-mWk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            </imageView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFX-g4-Icu" customClass="CustomPanelView" customModule="FlickrApp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="355" height="583"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h45-03-709">
+                                        <rect key="frame" x="10" y="10" width="245" height="27.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images from:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asc-GI-M1a">
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                                                <color key="textColor" red="0.56078431370000004" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searched Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFq-EZ-g09">
+                                                <rect key="frame" x="121" y="0.0" width="124" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" red="0.56078431370000004" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D0Y-Jg-7aw">
+                                        <rect key="frame" x="10" y="45" width="340" height="530"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7TZ-l4-kW1">
+                                            <size key="itemSize" width="158" height="150"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="4T8-8k-kbd">
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="530"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.87798394099999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </activityIndicatorView>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="woW-e8-8le" customClass="CustomImageViewCell" customModule="FlickrApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="158" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offlineImage" translatesAutoresizingMaskIntoConstraints="NO" id="Wjp-Vw-kdH" customClass="CustomImageView" customModule="FlickrApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="158" height="150"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Wjp-Vw-kdH" secondAttribute="bottom" id="AeT-KF-ngN"/>
+                                                    <constraint firstItem="Wjp-Vw-kdH" firstAttribute="leading" secondItem="woW-e8-8le" secondAttribute="leading" id="DiR-hV-WPP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wjp-Vw-kdH" secondAttribute="trailing" id="OCl-8M-VM2"/>
+                                                    <constraint firstItem="Wjp-Vw-kdH" firstAttribute="top" secondItem="woW-e8-8le" secondAttribute="top" id="cw8-xX-fLh"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="image" destination="Wjp-Vw-kdH" id="9Lc-wO-4BP"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="h45-03-709" firstAttribute="top" secondItem="IFX-g4-Icu" secondAttribute="top" constant="10" id="GiR-ux-ai4"/>
+                                    <constraint firstItem="D0Y-Jg-7aw" firstAttribute="leading" secondItem="Asc-GI-M1a" secondAttribute="leading" id="IoT-NC-ekf"/>
+                                    <constraint firstItem="D0Y-Jg-7aw" firstAttribute="top" secondItem="Asc-GI-M1a" secondAttribute="bottom" constant="8" id="LAP-n7-BCI"/>
+                                    <constraint firstAttribute="bottom" secondItem="D0Y-Jg-7aw" secondAttribute="bottom" constant="8" id="Q4q-Ou-l6H"/>
+                                    <constraint firstItem="h45-03-709" firstAttribute="leading" secondItem="IFX-g4-Icu" secondAttribute="leading" constant="10" id="eUf-b8-w2A"/>
+                                    <constraint firstAttribute="trailing" secondItem="D0Y-Jg-7aw" secondAttribute="trailing" constant="5" id="wou-wX-JgU"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QFq-EZ-g09" secondAttribute="trailing" constant="8" id="yjy-ef-Tkv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IFX-g4-Icu" firstAttribute="top" secondItem="QFc-o5-nx6" secondAttribute="bottom" constant="10" id="2fD-oc-Aou"/>
+                            <constraint firstAttribute="trailing" secondItem="Mcc-OW-mWk" secondAttribute="trailing" id="JZ1-RG-Jrg"/>
+                            <constraint firstItem="Mcc-OW-mWk" firstAttribute="leading" secondItem="p6x-HW-6S7" secondAttribute="leading" id="PUe-Kp-D2r"/>
+                            <constraint firstItem="P90-f7-VYw" firstAttribute="top" secondItem="IFX-g4-Icu" secondAttribute="bottom" constant="10" id="RbS-3g-gHZ"/>
+                            <constraint firstItem="IFX-g4-Icu" firstAttribute="leading" secondItem="p6x-HW-6S7" secondAttribute="leading" constant="10" id="aZN-Fn-vBO"/>
+                            <constraint firstItem="P90-f7-VYw" firstAttribute="top" secondItem="Mcc-OW-mWk" secondAttribute="bottom" id="mCD-X4-7eL"/>
+                            <constraint firstItem="Mcc-OW-mWk" firstAttribute="top" secondItem="QFc-o5-nx6" secondAttribute="bottom" id="mLN-xX-TfD"/>
+                            <constraint firstAttribute="trailing" secondItem="IFX-g4-Icu" secondAttribute="trailing" constant="10" id="nau-Qw-JTu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qrj-PZ-hH7" customClass="CustomHeaderView" customModule="FlickrApp" customModuleProvider="target">
+                        <view key="titleView" contentMode="scaleToFill" restorationIdentifier="logoView" id="AI5-fC-wcC">
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="logo" image="headerFlickrLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gLl-tW-WdW">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.96470588239999999" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="gLl-tW-WdW" secondAttribute="trailing" id="gZY-s3-eCr"/>
+                                <constraint firstItem="gLl-tW-WdW" firstAttribute="top" secondItem="AI5-fC-wcC" secondAttribute="top" id="hDq-Sa-chG"/>
+                                <constraint firstAttribute="bottom" secondItem="gLl-tW-WdW" secondAttribute="bottom" id="rfG-ET-X4G"/>
+                                <constraint firstItem="gLl-tW-WdW" firstAttribute="leading" secondItem="AI5-fC-wcC" secondAttribute="leading" id="z5b-ro-rYU"/>
+                            </constraints>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" image="customRefresh" id="IYN-ZA-4Ue">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="btnReloadTapped:" destination="BYZ-38-t0r" id="uKJ-EL-jHO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="4T8-8k-kbd" id="CKS-fx-3c6"/>
+                        <outlet property="imagesCollection" destination="D0Y-Jg-7aw" id="V4a-Wd-eRW"/>
+                        <outlet property="searchedTag" destination="QFq-EZ-g09" id="fma-LU-ul9"/>
+                        <segue destination="qSo-gS-v9n" kind="show" identifier="FlickrImageDetailVC" id="HL3-gR-PAC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+        </scene>
+        <!--Flickr Image DetailVC-->
+        <scene sceneID="AGv-I9-mwj">
+            <objects>
+                <viewController id="qSo-gS-v9n" customClass="FlickrImageDetailVC" customModule="FlickrApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VK5-eu-vgf"/>
+                        <viewControllerLayoutGuide type="bottom" id="yY0-pE-QEG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pGn-xC-lJR">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offlineImage" translatesAutoresizingMaskIntoConstraints="NO" id="THY-Ot-Rxm" customClass="CustomImageView" customModule="FlickrApp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="355" height="583"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SHb-Jf-baL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SHb-Jf-baL" secondAttribute="trailing" id="2LP-J8-3jU"/>
+                            <constraint firstItem="THY-Ot-Rxm" firstAttribute="top" secondItem="VK5-eu-vgf" secondAttribute="bottom" constant="10" id="6IY-Wy-taj"/>
+                            <constraint firstItem="yY0-pE-QEG" firstAttribute="top" secondItem="THY-Ot-Rxm" secondAttribute="bottom" constant="10" id="Ijt-6Z-YhB"/>
+                            <constraint firstItem="SHb-Jf-baL" firstAttribute="top" secondItem="VK5-eu-vgf" secondAttribute="bottom" id="Iwv-A3-rac"/>
+                            <constraint firstItem="SHb-Jf-baL" firstAttribute="leading" secondItem="pGn-xC-lJR" secondAttribute="leading" id="NRZ-TW-dfh"/>
+                            <constraint firstItem="THY-Ot-Rxm" firstAttribute="leading" secondItem="pGn-xC-lJR" secondAttribute="leading" constant="10" id="NnZ-ii-Suu"/>
+                            <constraint firstAttribute="trailing" secondItem="THY-Ot-Rxm" secondAttribute="trailing" constant="10" id="jlz-AF-YBK"/>
+                            <constraint firstItem="yY0-pE-QEG" firstAttribute="top" secondItem="SHb-Jf-baL" secondAttribute="bottom" id="tbo-qm-mY5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="SHb-Jf-baL" id="AEv-8c-Guw"/>
+                        <outlet property="image" destination="THY-Ot-Rxm" id="WwI-MV-Up4"/>
+                        <outlet property="imageView" destination="pGn-xC-lJR" id="4UY-kX-OwT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LX4-E3-QCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="124"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mgL-7L-a1a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NPP-Qq-kkN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="navBar" translucent="NO" id="UvJ-XL-TqP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.96470588235294119" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IAf-uv-fm9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4p1-w0-IkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="124"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="customRefresh" width="24" height="23"/>
+        <image name="headerFlickrLogo" width="89" height="29"/>
+        <image name="homeBackground" width="375" height="629"/>
+        <image name="offlineImage" width="148" height="148"/>
+    </resources>
+</document>
